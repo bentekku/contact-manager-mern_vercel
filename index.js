@@ -28,7 +28,10 @@ server.use("/contacts", userRouter);
 // });
 // enabling routing to frontend / react routes
 server.use("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, process.env.PUBLIC_DIR, "index.html"));
+  res
+    .status(200)
+    .set({ "Content-Type": "text/html" })
+    .sendFile(path.resolve(__dirname, process.env.PUBLIC_DIR, "index.html"));
 });
 
 server.listen(port, (req, res) => {
