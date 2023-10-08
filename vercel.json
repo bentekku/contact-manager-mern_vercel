@@ -3,12 +3,24 @@
     {
       "src": "index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "dist/",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/contacts",
       "dest": "index.js"
+    },
+    {
+      "src": "/contacts/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/"
     }
   ]
 }
