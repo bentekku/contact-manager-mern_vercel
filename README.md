@@ -4,7 +4,7 @@
 
 This project is a simple CRUD (Create, Read, Update, Delete) contact manager application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It serves as an excellent introduction to building full-stack web applications. The project is live hosted on Vercel, allowing you to explore it in action.
 
-**Live Demo:** [Contact Manager](https://your-vercel-url-here)
+**Live Demo:** [Contact Manager]([https://your-vercel-url-here](https://contact-manager-mern-vercel.vercel.app/))
 
 ## Overview
 
