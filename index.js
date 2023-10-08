@@ -39,4 +39,4 @@ server.listen(port, (req, res) => {
   // console.log(staticPath); // For checking the path
 });
 
-module.exports = server;
+// module.exports = server;
