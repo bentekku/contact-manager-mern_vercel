@@ -18,22 +18,19 @@ async function main() {
   console.log("database is connected");
 }
 
-// body parser middleware
 server.use(cors());
-server.use(express.json());
-// serving static files to display built or compiled react project
-server.use(express.static(path.resolve(__dirname, "..", "frontend", "dist")));
+server.use(express.json()); // Body parser middleware
+server.use(express.static(path.resolve(__dirname, "dist"))); // serving static files to display built or compiled react project
 server.use("/contacts", userRouter);
 server.use("/dist", (req, res) => {
   res.status(200).json({ status: "loaded to /dist" });
 });
 // enabling routing to frontend / react routes
 server.use("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "..", "frontend", "dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
 server.listen(port, (req, res) => {
   console.log(`Server is running on: http://localhost:${port}`);
-
-  // console.log(frntPath);
+  // console.log(staticPath); // For checking the path
 });
