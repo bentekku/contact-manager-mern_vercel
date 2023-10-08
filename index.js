@@ -20,7 +20,7 @@ async function main() {
 
 server.use(cors());
 server.use(express.json()); // Body parser middleware
-server.use(express.static(path.resolve(__dirname, "dist"))); // serving static files to display built or compiled react project
+server.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR))); // serving static files to display built or compiled react project
 server.use("/contacts", userRouter);
 //// For Debugging
 // server.use("/dist", (req, res) => {
@@ -28,7 +28,7 @@ server.use("/contacts", userRouter);
 // });
 // enabling routing to frontend / react routes
 server.use("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, process.env.PUBLIC_DIR, "index.html"));
 });
 
 server.listen(port, (req, res) => {
