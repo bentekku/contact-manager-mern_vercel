@@ -38,5 +38,3 @@ server.listen(port, (req, res) => {
   console.log(`Server is running`);
   // console.log(staticPath); // For checking the path
 });
-
-// module.exports = server;
