@@ -22,15 +22,16 @@ server.use(cors());
 server.use(express.json()); // Body parser middleware
 server.use(express.static(path.resolve(__dirname, "dist"))); // serving static files to display built or compiled react project
 server.use("/contacts", userRouter);
-server.use("/dist", (req, res) => {
-  res.status(200).json({ status: "loaded to /dist" });
-});
+//// For Debugging
+// server.use("/dist", (req, res) => {
+//   res.status(200).json({ status: "loaded to /dist" });
+// });
 // enabling routing to frontend / react routes
 server.use("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
 server.listen(port, (req, res) => {
-  console.log(`Server is running on: http://localhost:${port}`);
+  console.log(`Server is running`);
   // console.log(staticPath); // For checking the path
 });
